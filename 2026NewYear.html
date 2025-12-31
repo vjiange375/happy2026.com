@@ -1,11 +1,9 @@
- 
- 
 <!DOCTYPE html>
 <html lang="en" >
 <head>
-  <meta charset="UTF-8">
-  <title>2025新年快乐！万事如意！</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta charset="UTF-8">
+<title>2025新年快乐！万事如意！</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#000000">
@@ -18,189 +16,175 @@
 <link rel="stylesheet" href="./style.css">
 <style>
 * {
-  position: relative;
-  box-sizing: border-box;
+position: relative;
+box-sizing: border-box;
 }
- 
 html,
 body {
-  height: 100%;
+height: 100%;
 }
- 
 html {
-  background-color: #000;
+background-color: #000;
 }
- 
 body {
-  overflow: hidden;
-  color: rgba(228, 159, 10, 0.5);
-  font-family: "Russo One", arial, sans-serif;
-  line-height: 1.25;
-  letter-spacing: 0.06em;
+overflow: hidden;
+color: rgba(228, 159, 10, 0.5);
+font-family: "Russo One", arial, sans-serif;
+line-height: 1.25;
+letter-spacing: 0.06em;
 }
- 
 .hide {
-  opacity: 0;
-  visibility: hidden;
+opacity: 0;
+visibility: hidden;
 }
- 
 .remove {
-  display: none;
+display: none;
 }
- 
 .blur {
-  filter: blur(12px);
+filter: blur(12px);
 }
- 
 .container {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+height: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
 }
- 
 #loading-init {
-  width: 100%;
-  align-self: center;
-  text-align: center;
-  font-size: 2em;
+width: 100%;
+align-self: center;
+text-align: center;
+font-size: 2em;
 }
- 
 #stage-container {
-  overflow: hidden;
-  box-sizing: initial;
-  border: 1px solid #222;
-  margin: -1px;
+overflow: hidden;
+box-sizing: initial;
+border: 1px solid #222;
+margin: -1px;
 }
- 
 #canvas-container {
-  width: 100%;
-  height: 100%;
-  transition: filter 0.3s;
+width: 100%;
+height: 100%;
+transition: filter 0.3s;
 }
 #canvas-container canvas {
-  position: absolute;
-  mix-blend-mode: lighten;
+position: absolute;
+mix-blend-mode: lighten;
 }
- 
 #controls {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  padding-bottom: 50px;
-  display: flex;
-  justify-content: space-between;
-  transition: opacity 0.3s, visibility 0.3s;
+position: absolute;
+top: 0;
+width: 100%;
+padding-bottom: 50px;
+display: flex;
+justify-content: space-between;
+transition: opacity 0.3s, visibility 0.3s;
 }
 @media (min-width: 800px) {
-  #controls {
-    visibility: visible;
-  }
-  #controls.hide:hover {
-    opacity: 1;
-  }
+#controls {
+visibility: visible;
 }
- 
+#controls.hide:hover {
+opacity: 1;
+}
+}
 #menu {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.42);
-  transition: opacity 0.3s, visibility 0.3s;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+position: absolute;
+top: 0;
+bottom: 0;
+width: 100%;
+background-color: rgba(0, 0, 0, 0.42);
+transition: opacity 0.3s, visibility 0.3s;
 }
 #menu__header {
-  padding: 20px 0 44px;
-  font-size: 2em;
-  text-transform: uppercase;
+padding: 20px 0 44px;
+font-size: 2em;
+text-transform: uppercase;
 }
 #menu form {
-  width: 240px;
-  padding: 0 20px;
-  overflow: auto;
+width: 240px;
+padding: 0 20px;
+overflow: auto;
 }
 #menu .form-option {
-  margin: 20px 0;
+margin: 20px 0;
 }
 #menu .form-option label {
-  text-transform: uppercase;
+text-transform: uppercase;
 }
 #menu .form-option--select label {
-  display: block;
-  margin-bottom: 6px;
+display: block;
+margin-bottom: 6px;
 }
 #menu .form-option--select select {
-  display: block;
-  width: 100%;
-  height: 30px;
-  font-size: 1rem;
-  font-family: "Russo One", arial, sans-serif;
-  color: rgba(255, 255, 255, 0.5);
-  letter-spacing: 0.06em;
-  background-color: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+display: block;
+width: 100%;
+height: 30px;
+font-size: 1rem;
+font-family: "Russo One", arial, sans-serif;
+color: rgba(255, 255, 255, 0.5);
+letter-spacing: 0.06em;
+background-color: transparent;
+border: 1px solid rgba(255, 255, 255, 0.5);
 }
 #menu .form-option--select select option {
-  background-color: black;
+background-color: black;
 }
 #menu .form-option--checkbox label {
-  display: flex;
-  align-items: center;
-  transition: opacity 0.3s;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+display: flex;
+align-items: center;
+transition: opacity 0.3s;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
 }
 #menu .form-option--checkbox input {
-  display: block;
-  width: 20px;
-  height: 20px;
-  margin-right: 8px;
-  opacity: 0.5;
+display: block;
+width: 20px;
+height: 20px;
+margin-right: 8px;
+opacity: 0.5;
 }
 @media (max-width: 800px) {
-  #menu .form-option select, #menu .form-option input {
-    outline: none;
-  }
+#menu .form-option select, #menu .form-option input {
+outline: none;
 }
- 
+}
 #close-menu-btn {
-  position: absolute;
-  top: 0;
-  right: 0;
+position: absolute;
+top: 0;
+right: 0;
 }
- 
 .btn {
-  opacity: 0.16;
-  width: 44px;
-  height: 44px;
-  display: flex;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  cursor: default;
-  transition: opacity 0.3s;
+opacity: 0.16;
+width: 44px;
+height: 44px;
+display: flex;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+cursor: default;
+transition: opacity 0.3s;
 }
 .btn--bright {
-  opacity: 0.5;
+opacity: 0.5;
 }
 @media (min-width: 800px) {
-  .btn:hover {
-    opacity: 0.32;
-  }
-  .btn--bright:hover {
-    opacity: 0.75;
-  }
+.btn:hover {
+opacity: 0.32;
+}
+.btn--bright:hover {
+opacity: 0.75;
+}
 }
 .btn svg {
-  display: block;
-  margin: auto;
+display: block;
+margin: auto;
 }
 </style>
 </head>
@@ -232,16 +216,14 @@ body {
 <!-- 倒数 -->
 <canvas style="position:absolute;width:100%;height:100%;z-index:9999" class="canvas" ></canvas>
 <div class="overlay">
-  <div class="tabs">
-    <div class="tabs-labels"><span class="tabs-label"></span><span class="tabs-label"></span><span class="tabs-label"></span></div>
-
-    <div class="tabs-panels">
-      <ul class="tabs-panel commands">
-      </ul>
-    </div>
-  </div>
+<div class="tabs">
+<div class="tabs-labels"><span class="tabs-label"></span><span class="tabs-label"></span><span class="tabs-label"></span></div>
+<div class="tabs-panels">
+<ul class="tabs-panel commands">
+</ul>
 </div>
- 
+</div>
+</div>
 <!-- App -->
 <div class="container">
 <div id="loading-init">Loading...</div>
@@ -289,14 +271,12 @@ body {
 </div>
 </div>
 <!-- partial -->
-  <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/329180/fscreen%401.0.1.js'></script>
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/329180/fscreen%401.0.1.js'></script>
 <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/329180/Stage%400.1.4.js'></script>
 <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/329180/MyMath.js'></script>
 <script>
 'use strict';
 console.clear();
- 
- 
 const IS_MOBILE = window.innerWidth <= 640;
 const IS_DESKTOP = window.innerWidth > 800;
 const IS_HEADER = IS_DESKTOP && window.innerHeight < 300;
@@ -305,7 +285,6 @@ const MAX_WIDTH = 7680;
 const MAX_HEIGHT = 4320;
 const GRAVITY = 0.9; // Acceleration in px/s
 let simSpeed = 1;
- 
 const COLOR = {
 Red: '#ff0043',
 Green: '#14fc56',
@@ -314,11 +293,8 @@ Purple: '#e60aff',
 Gold: '#ffae00',
 White: '#ffffff'
 };
- 
 // Special invisible color (not rendered, and therefore not in COLOR map)
 const INVISIBLE = '_INVISIBLE_';
- 
- 
 // Interactive state management
 const store = {
 _listeners: new Set(),
@@ -359,14 +335,11 @@ localStorage.setItem('configSize', JSON.stringify(this.state.config.size));
 localStorage.setItem('hideControls', JSON.stringify(this.state.config.hideControls));
 }
 };
- 
 if (!IS_HEADER) {
 store.load();
 }
- 
 // Actions
 // ---------
- 
 function togglePause(toggle) {
 if (typeof toggle === 'boolean') {
 store.setState({ paused: toggle });
@@ -374,7 +347,6 @@ store.setState({ paused: toggle });
 store.setState({ paused: !store.state.paused });
 }
 }
- 
 function toggleLongExposure(toggle) {
 if (typeof toggle === 'boolean') {
 store.setState({ longExposure: toggle });
@@ -382,7 +354,6 @@ store.setState({ longExposure: toggle });
 store.setState({ longExposure: !store.state.longExposure });
 }
 }
- 
 function toggleMenu(toggle) {
 if (typeof toggle === 'boolean') {
 store.setState({ menuOpen: toggle });
@@ -390,24 +361,19 @@ store.setState({ menuOpen: toggle });
 store.setState({ menuOpen: !store.state.menuOpen });
 }
 }
- 
 function updateConfig(nextConfig) {
 nextConfig = nextConfig || getConfigFromDOM();
 store.setState({
 config: Object.assign({}, store.state.config, nextConfig)
 });
 }
- 
 // Selectors
 // -----------
- 
 const canInteract = () => !store.state.paused && !store.state.menuOpen;
 const shellNameSelector = () => store.state.config.shell;
 // Converts shell size to number.
 const shellSizeSelector = () => +store.state.config.size;
 const finaleSelector = () => store.state.config.finale;
- 
- 
 // Render app UI / keep in sync with state
 const appNodes = {
 stageContainer: '#stage-container',
@@ -427,16 +393,13 @@ finaleModeLabel: '#finale-mode-label',
 hideControls: '#hide-controls',
 hideControlsLabel: '#hide-controls-label'
 };
- 
 // Convert appNodes selectors to dom nodes
 Object.keys(appNodes).forEach(key => {
 appNodes[key] = document.querySelector(appNodes[key]);
 });
- 
 // Remove loading state
 document.getElementById('loading-init').remove();
 appNodes.stageContainer.classList.remove('remove');
- 
 // First render is called in init()
 function renderApp(state) {
 appNodes.pauseBtnSVG.setAttribute('href', `#icon-${state.paused ? 'play' : 'pause'}`);
@@ -451,10 +414,7 @@ appNodes.autoLaunch.checked = state.config.autoLaunch;
 appNodes.finaleMode.checked = state.config.finale;
 appNodes.hideControls.checked = state.config.hideControls;
 }
- 
 store.subscribe(renderApp);
- 
- 
 function getConfigFromDOM() {
 return {
 shell: appNodes.shellType.value,
@@ -464,15 +424,12 @@ finale: appNodes.finaleMode.checked,
 hideControls: appNodes.hideControls.checked
 };
 };
- 
 const updateConfigNoEvent = () => updateConfig();
 appNodes.shellType.addEventListener('input', updateConfigNoEvent);
 appNodes.shellSize.addEventListener('input', updateConfigNoEvent);
 appNodes.autoLaunchLabel.addEventListener('click', () => setTimeout(updateConfig, 0));
 appNodes.finaleModeLabel.addEventListener('click', () => setTimeout(updateConfig, 0));
 appNodes.hideControlsLabel.addEventListener('click', () => setTimeout(updateConfig, 0));
- 
- 
 // Constant derivations
 const COLOR_NAMES = Object.keys(COLOR);
 const COLOR_CODES = COLOR_NAMES.map(colorName => COLOR[colorName]);
@@ -487,12 +444,10 @@ g: parseInt(hex.substr(3, 2), 16),
 b: parseInt(hex.substr(5, 2), 16),
 };
 });
- 
 // Get a random color.
 function randomColorSimple() {
 return COLOR_CODES[Math.random() * COLOR_CODES.length | 0];
 }
- 
 // Get a random color, with some customization options available.
 let lastColor;
 function randomColor(options) {
@@ -517,25 +472,20 @@ color = randomColorSimple();
 lastColor = color;
 return color;
 }
- 
 function whiteOrGold() {
 return Math.random() < 0.5 ? COLOR.Gold : COLOR.White;
 }
- 
 const PI_2 = Math.PI * 2;
 const PI_HALF = Math.PI * 0.5;
- 
 const trailsStage = new Stage('trails-canvas');
 const mainStage = new Stage('main-canvas');
 const stages = [
 trailsStage,
 mainStage
 ];
- 
 // Fill trails canvas with black to start.
 trailsStage.ctx.fillStyle = '#000';
 trailsStage.ctx.fillRect(0, 0, trailsStage.width, trailsStage.height);
-
 //image
 // const bacCanvas = document.getElementById('trails-canvas');
 // const backgroundImage = new Image();
@@ -543,29 +493,22 @@ trailsStage.ctx.fillRect(0, 0, trailsStage.width, trailsStage.height);
 // backgroundImage.onload = function() {
 //   trailsStage.ctx.drawImage(backgroundImage, 0, 0, bacCanvas.width, bacCanvas.height);
 // }
- 
- 
 // Fullscreen helpers, using Fscreen for prefixes
 function requestFullscreen() {
 if (fullscreenEnabled() && !isFullscreen()) {
 fscreen.requestFullscreen(document.documentElement);
 }
 }
- 
 function fullscreenEnabled() {
 return fscreen.fullscreenEnabled;
 }
- 
 function isFullscreen() {
 return !!fscreen.fullscreenElement;
 }
- 
- 
 // Shell helpers
 function makePistilColor(shellColor) {
 return (shellColor === COLOR.White || shellColor === COLOR.Gold) ? randomColor({ notColor: shellColor }) : whiteOrGold();
 }
- 
 // Unique shell types
 const crysanthemumShell = (size=1) => {
 const glitter = Math.random() < 0.25;
@@ -586,15 +529,12 @@ pistilColor,
 streamers
 };
 };
- 
- 
 const palmShell = (size=1) => ({
 size: 250 + size * 75,
 starDensity: 0.6,
 starLife: 1800 + size * 200,
 glitter: 'heavy'
 });
- 
 const ringShell = (size=1) => {
 const color = randomColor();
 const pistil = Math.random() < 0.75;
@@ -610,7 +550,6 @@ glitter: !pistil ? 'light' : '',
 glitterColor: color === COLOR.Gold ? COLOR.Gold : COLOR.White
 };
 };
- 
 const crossetteShell = (size=1) => {
 const color = randomColor({ limitWhite: true });
 return {
@@ -623,7 +562,6 @@ pistil: Math.random() < 0.5,
 pistilColor: makePistilColor(color)
 };
 };
- 
 const floralShell = (size=1) => ({
 size: 300 + size * 120,
 starDensity: 0.38,
@@ -632,7 +570,6 @@ starLifeVariation: 0.5,
 color: Math.random() < 0.65 ? 'random' : (Math.random() < 0.15 ? randomColor() : [randomColor(), randomColor({ notSame: true })]),
 floral: true
 });
- 
 const fallingLeavesShell = (size=1) => ({
 color: INVISIBLE,
 size: 300 + size * 120,
@@ -643,7 +580,6 @@ glitter: 'medium',
 glitterColor: COLOR.Gold,
 fallingLeaves: true
 });
- 
 const willowShell = (size=1) => ({
 size: 300 + size * 100,
 starDensity: 0.7,
@@ -652,7 +588,6 @@ glitter: 'willow',
 glitterColor: COLOR.Gold,
 color: INVISIBLE
 });
- 
 const crackleShell = (size=1) => {
 // favor gold
 const color = Math.random() < 0.75 ? COLOR.Gold : randomColor();
@@ -669,7 +604,6 @@ pistil: Math.random() < 0.65,
 pistilColor: makePistilColor(color)
 };
 };
- 
 const horsetailShell = (size=1) => {
 const color = randomColor();
 return {
@@ -682,19 +616,15 @@ glitter: 'medium',
 glitterColor: Math.random() < 0.5 ? whiteOrGold() : color
 };
 };
- 
 function randomShellName() {
 return Math.random() < 0.6 ? 'Crysanthemum' : shellNames[(Math.random() * (shellNames.length - 1) + 1) | 0 ];
 }
- 
 function randomShell(size) {
 return shellTypes[randomShellName()](size);
 }
- 
 function shellFromConfig(size) {
 return shellTypes[shellNameSelector()](size);
 }
- 
 // Get a random shell, not including processing intensive varients
 // Note this is only random when "Random" shell is selected in config.
 // Also, this does not create the shell, only returns the factory function.
@@ -709,8 +639,6 @@ shellName = randomShellName();
 }
 return shellTypes[shellName];
 }
- 
- 
 const shellTypes = {
 'Random': randomShell,
 'Crackle': crackleShell,
@@ -723,9 +651,7 @@ const shellTypes = {
 'Ring': ringShell,
 'Willow': willowShell
 };
- 
 const shellNames = Object.keys(shellTypes);
- 
 function init() {
 // Populate dropdowns
 // shell type
@@ -739,25 +665,19 @@ appNodes.shellSize.innerHTML = options;
 // initial render
 renderApp(store.state);
 }
- 
- 
 function fitShellPositionInBoundsH(position) {
 const edge = 0.18;
 return (1 - edge*2) * position + edge;
 }
- 
 function fitShellPositionInBoundsV(position) {
 return position * 0.75;
 }
- 
 function getRandomShellPositionH() {
 return fitShellPositionInBoundsH(Math.random());
 }
- 
 function getRandomShellPositionV() {
 return fitShellPositionInBoundsV(Math.random());
 }
- 
 function getRandomShellSize() {
 const baseSize = shellSizeSelector();
 const maxVariance = Math.min(2.5, baseSize);
@@ -772,8 +692,6 @@ x: fitShellPositionInBoundsH(x),
 height: fitShellPositionInBoundsV(height)
 };
 }
- 
- 
 // Launches a shell from a user pointer event, based on state.config
 function launchShellFromConfig(event) {
 const shell = new Shell(shellFromConfig(shellSizeSelector()));
@@ -784,11 +702,8 @@ event ? event.x / w : getRandomShellPositionH(),
 event ? 1 - event.y / h : getRandomShellPositionV()
 );
 }
- 
- 
 // Sequences
 // -----------
- 
 function seqRandomShell() {
 const size = getRandomShellSize();
 const shell = new Shell(shellFromConfig(size.size));
@@ -799,7 +714,6 @@ extraDelay = 4000;
 }
 return 900 + Math.random() * 600 + extraDelay;
 }
- 
 function seqTwoRandom() {
 const size1 = getRandomShellSize();
 const size2 = getRandomShellSize();
@@ -815,7 +729,6 @@ extraDelay = 4000;
 }
 return 900 + Math.random() * 600 + extraDelay;
 }
- 
 function seqTriple() {
 const shellType = randomFastShell();
 const baseSize = shellSizeSelector();
@@ -837,7 +750,6 @@ shell3.launch(0.8 + offset, 0.1);
 }, rightDelay);
 return 4000;
 }
- 
 function seqSmallBarrage() {
 seqSmallBarrage.lastCalled = Date.now();
 const barrageCount = IS_DESKTOP ? 11 : 5;
@@ -872,16 +784,12 @@ return 3400 + barrageCount * 120;
 }
 seqSmallBarrage.cooldown = 15000;
 seqSmallBarrage.lastCalled = Date.now();
- 
- 
 const sequences = [
 seqRandomShell,
 seqTwoRandom,
 seqTriple,
 seqSmallBarrage
 ];
- 
- 
 let isFirstSeq = true;
 const finaleCount = 32;
 let currentFinaleCount = 0;
@@ -917,11 +825,8 @@ else if (rand < 1) {
 return seqTriple();
 }
 }
- 
- 
 let activePointerCount = 0;
 let isUpdatingSpeed = false;
- 
 function handlePointerStart(event) {
 activePointerCount++;
 const btnSize = 44;
@@ -947,19 +852,16 @@ else if (event.onCanvas) {
 launchShellFromConfig(event);
 }
 }
- 
 function handlePointerEnd(event) {
 activePointerCount--;
 isUpdatingSpeed = false;
 }
- 
 function handlePointerMove(event) {
 if (!canInteract()) return;
 if (isUpdatingSpeed) {
 updateSpeedFromEvent(event);
 }
 }
- 
 function handleKeydown(event) {
 // P
 if (event.keyCode === 80) {
@@ -974,15 +876,12 @@ else if (event.keyCode === 27) {
 toggleMenu(false);
 }
 }
- 
 mainStage.addEventListener('pointerstart', handlePointerStart);
 mainStage.addEventListener('pointerend', handlePointerEnd);
 mainStage.addEventListener('pointermove', handlePointerMove);
 window.addEventListener('keydown', handleKeydown);
 // Try to go fullscreen upon a touch
 window.addEventListener('touchend', (event) => !IS_DESKTOP && requestFullscreen());
- 
- 
 function handleResize() {
 const w = window.innerWidth;
 const h = window.innerHeight;
@@ -994,17 +893,12 @@ appNodes.stageContainer.style.width = containerW + 'px';
 appNodes.stageContainer.style.height = containerH + 'px';
 stages.forEach(stage => stage.resize(containerW, containerH));
 }
- 
 // Compute initial dimensions
 handleResize();
- 
 window.addEventListener('resize', handleResize);
- 
- 
 // Dynamic globals
 let speedBarOpacity = 0;
 let autoLaunchTime = 0;
- 
 function updateSpeedFromEvent(event) {
 if (isUpdatingSpeed || event.y >= mainStage.height - 44) {
 // On phones it's hard to hit the edge pixels in order to set speed at 0 or 1, so some padding is provided to make that easier.
@@ -1019,8 +913,6 @@ return true;
 // Return false if the speed wasn't updated
 return false;
 }
- 
- 
 // Extracted function to keep `update()` optimized
 function updateGlobals(timeStep, lag) {
 // Always try to fade out speed bar
@@ -1038,8 +930,6 @@ autoLaunchTime = startSequence();
 }
 }
 }
- 
- 
 function update(frameTime, lag) {
 if (!canInteract()) return;
 const { width, height } = mainStage;
@@ -1112,7 +1002,6 @@ spark.speedY += gAcc;
 });
 render(speed);
 }
- 
 function render(speed) {
 const { dpr, width, height } = mainStage;
 const trailsCtx = trailsStage.ctx;
@@ -1138,10 +1027,10 @@ trailsCtx.fillRect(bf.x - bf.radius, bf.y - bf.radius, bf.radius * 2, bf.radius 
 BurstFlash.returnInstance(bf);
 }
 // Draw stars
-trailsCtx.lineWidth = Star.drawWidth;
+trailsCtx.lineWidth = Star.drawWidth / dpr; // ✅ 修复粒子过大
 trailsCtx.lineCap = 'round';
 mainCtx.strokeStyle = '#fff';
-  mainCtx.lineWidth = 1;
+mainCtx.lineWidth = 1;
 mainCtx.beginPath();
 COLOR_CODES.forEach(color => {
 const stars = Star.active[color];
@@ -1156,9 +1045,8 @@ mainCtx.lineTo(star.x - star.speedX * 1.6, star.y - star.speedY * 1.6);
 trailsCtx.stroke();
 });
 mainCtx.stroke();
- 
 // Draw sparks
-trailsCtx.lineWidth = Spark.drawWidth;
+trailsCtx.lineWidth = Spark.drawWidth / dpr; // ✅ 修复粒子过大
 trailsCtx.lineCap = 'butt';
 COLOR_CODES.forEach(color => {
 const sparks = Spark.active[color];
@@ -1181,8 +1069,6 @@ mainCtx.globalAlpha = 1;
 trailsCtx.resetTransform();
 mainCtx.resetTransform();
 }
- 
- 
 // Draw colored overlay based on combined brightness of stars (light up the sky!)
 // Note: this is applied to the canvas container's background-color, so it's behind the particles
 const currentSkyColor = { r: 0, g: 0, b: 0 };
@@ -1223,10 +1109,7 @@ currentSkyColor.g += (targetSkyColor.g - currentSkyColor.g) / colorChange * spee
 currentSkyColor.b += (targetSkyColor.b - currentSkyColor.b) / colorChange * speed;
 appNodes.canvasContainer.style.backgroundColor = `rgb(${currentSkyColor.r | 0}, ${currentSkyColor.g | 0}, ${currentSkyColor.b | 0})`;
 }
- 
 mainStage.addEventListener('ticker', update);
- 
- 
 // Helper used to semi-randomly spread particles over an arc
 // Values are flexible - `start` and `arcLength` can be negative, and `randomness` is simply a multiplier for random addition.
 function createParticleArc(start, arcLength, count, randomness, particleFactory) {
@@ -1247,11 +1130,8 @@ particleFactory(angle + Math.random() * angleDelta * randomness);
 }
 }
 }
- 
- 
 // Various star effects.
 // These are designed to be attached to a star's `onDeath` event.
- 
 // Crossette breaks star into four same-color pieces which branch in a cross-like shape.
 function crossetteEffect(star) {
 const startAngle = Math.random() * PI_HALF;
@@ -1266,7 +1146,6 @@ Math.random() * 0.6 + 0.75,
 );
 });
 }
- 
 // Flower is like a mini shell
 function floralEffect(star) {
 const startAngle = Math.random() * PI_HALF;
@@ -1286,7 +1165,6 @@ star.speedY
 // Queue burst flash render
 BurstFlash.add(star.x, star.y, 24);
 }
- 
 // Floral burst with willow stars
 function fallingLeavesEffect(star) {
 const startAngle = Math.random() * PI_HALF;
@@ -1311,7 +1189,6 @@ newStar.sparkLifeVariation = 3.2;
 // Queue burst flash render
 BurstFlash.add(star.x, star.y, 24);
 }
- 
 // Crackle pops into a small cloud of golden sparks.
 function crackleEffect(star) {
 createParticleArc(0, PI_2, 10, 1.8, (angle) => {
@@ -1326,27 +1203,23 @@ Math.pow(Math.random(), 0.45) * 2.4,
 );
 });
 }
- 
- 
- 
 /**
- * Shell can be constructed with options:
- *
- * size:      Size of the burst.
- * starCount: Number of stars to create. This is optional, and will be set to a reasonable quantity for size if omitted.
- * starLife:
- * starLifeVariation:
- * color:
- * glitterColor:
- * glitter: One of: 'light', 'medium', 'heavy', 'streamer', 'willow'
- * pistil:
- * pistilColor:
- * streamers:
- * crossette:
- * floral:
- * crackle:
- */
- 
+* Shell can be constructed with options:
+*
+* size:      Size of the burst.
+* starCount: Number of stars to create. This is optional, and will be set to a reasonable quantity for size if omitted.
+* starLife:
+* starLifeVariation:
+* color:
+* glitterColor:
+* glitter: One of: 'light', 'medium', 'heavy', 'streamer', 'willow'
+* pistil:
+* pistilColor:
+* streamers:
+* crossette:
+* floral:
+* crackle:
+*/
 class Shell {
 constructor(options) {
 Object.assign(this, options);
@@ -1406,7 +1279,6 @@ comet.onDeath = comet => this.burst(comet.x, comet.y);
 burst(x, y) {
 // Set burst speed so overall burst grows to set size. This specific formula was derived from testing, and is affected by simulated air drag.
 const speed = this.size / 96;
- 
 let color, onDeath, sparkFreq, sparkSpeed, sparkLife;
 let sparkLifeVariation = 0.25;
 if (this.crossette) onDeath = crossetteEffect;
@@ -1452,9 +1324,7 @@ this.starLife + Math.random() * this.starLife * this.starLifeVariation,
 this.horsetail && this.comet && this.comet.speedX,
 this.horsetail && this.comet && this.comet.speedY
 );
- 
 star.onDeath = onDeath;
- 
 if (this.glitter) {
 star.sparkFreq = sparkFreq;
 star.sparkSpeed = sparkSpeed;
@@ -1549,9 +1419,7 @@ innerShell.burst(x, y);
 BurstFlash.add(x, y, this.size / 8);
 }
 }
- 
- 
- 
+}
 const BurstFlash = {
 active: [],
 _pool: [],
@@ -1570,9 +1438,6 @@ returnInstance(instance) {
 this._pool.push(instance);
 }
 };
- 
- 
- 
 // Helper to generate objects for storing active particles.
 // Particles are stored in arrays keyed by color (code, not name) for improved rendering performance.
 function createParticleCollection() {
@@ -1582,7 +1447,6 @@ collection[color] = [];
 });
 return collection;
 }
- 
 const Star = {
 // Visual properties
 drawWidth: 3,
@@ -1594,7 +1458,6 @@ _pool: [],
 _new() {
 return {};
 },
- 
 add(x, y, color, angle, speed, life, speedOffX, speedOffY) {
 const instance = this._pool.pop() || this._new();
 instance.heavy = false;
@@ -1618,7 +1481,6 @@ instance.sparkLifeVariation = 0.25;
 this.active[color].push(instance);
 return instance;
 },
- 
 // Public method for cleaning up and returning an instance back to the pool.
 returnInstance(instance) {
 // Call onDeath handler if available (and pass it current star instance)
@@ -1629,8 +1491,6 @@ instance.onDeath = null;
 this._pool.push(instance);
 }
 };
- 
- 
 const Spark = {
 // Visual properties
 drawWidth: 0.75,
@@ -1641,7 +1501,6 @@ _pool: [],
 _new() {
 return {};
 },
- 
 add(x, y, color, angle, speed, life) {
 const instance = this._pool.pop() || this._new();
 instance.x = x;
@@ -1655,16 +1514,12 @@ instance.life = life;
 this.active[color].push(instance);
 return instance;
 },
- 
 // Public method for cleaning up and returning an instance back to the pool.
 returnInstance(instance) {
 // Add back to the pool.
 this._pool.push(instance);
 }
 };
- 
- 
- 
 init();
 </script>
 <script src="js/index.js"></script>
